@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Forever Forex Signals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FOREVER <b>FOREX</b><small>SIGNALS</small></span></a>
+    <nav><a href="#dashboard">Dashboard</a><a href="#signals">Signals</a><a href="#vip">VIP Access</a></nav>
+    <button id="vipToggle" class="button button-gold">Preview VIP</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow"><span class="pulse"></span> FOREX SIGNAL TERMINAL · DEMO MODE</p>
+        <h1>Trade with a plan.<br><span>Not with emotion.</span></h1>
+        <p class="hero-copy">A strategy-driven forex signal dashboard for currency traders. Explore generated setups, risk levels, and signal history in one place.</p>
+        <div class="hero-actions"><a class="button button-gold" href="#signals">Explore signals <span>↗</span></a><a class="button button-outline" href="#how-it-works">How it works</a></div>
+        <p class="demo-note">Demo data only — not live market prices or financial advice.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top"><span>STRATEGY STATUS</span><span class="status"><i></i> RUNNING</span></div>
+        <div class="mini-chart">
+          <div class="chart-label"><span>EUR/USD · DEMO</span><b id="heroPrice">1.08420</b></div>
+          <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative demo price chart">
+            <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#28c99a" stop-opacity=".32"/><stop offset="100%" stop-color="#28c99a" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0 130 C25 120 35 138 58 104 S95 115 118 84 S151 110 180 76 S215 88 244 62 S280 80 308 55 S350 77 376 45 S412 67 440 34 S482 45 520 18 L520 170 L0 170 Z" fill="url(#fill)"/>
+            <path d="M0 130 C25 120 35 138 58 104 S95 115 118 84 S151 110 180 76 S215 88 244 62 S280 80 308 55 S350 77 376 45 S412 67 440 34 S482 45 520 18" fill="none" stroke="#28c99a" stroke-width="3" stroke-linecap="round"/>
+            <path d="M0 145 H520 M0 100 H520 M0 55 H520" stroke="#344155" stroke-dasharray="4 7" stroke-width="1"/>
+          </svg>
+          <div class="chart-foot"><span>Illustrative trend</span><span>Strategy: EMA crossover</span></div>
+        </div>
+        <div class="hero-stats"><div><small>Pairs monitored</small><b id="pairCount">18</b></div><div><small>Signals generated</small><b id="signalCount">—</b></div><div><small>Mode</small><b>Simulation</b></div></div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <div class="section-heading"><div><p class="eyebrow">MARKET OVERVIEW</p><h2>Trading dashboard</h2></div><div class="pill"><span class="dot-green"></span> Strategy engine active</div></div>
+      <div class="metric-grid">
+        <article class="metric"><span class="metric-icon">↗</span><small>Pairs scanned</small><strong id="metricPairs">18</strong><span class="metric-foot">Major · Minor · Exotic</span></article>
+        <article class="metric"><span class="metric-icon">⌁</span><small>BUY setups</small><strong id="buyCount">—</strong><span class="metric-foot">Generated from demo candles</span></article>
+        <article class="metric"><span class="metric-icon">⌁</span><small>SELL setups</small><strong id="sellCount">—</strong><span class="metric-foot">Generated from demo candles</span></article>
+        <article class="metric"><span class="metric-icon">◷</span><small>Last scan</small><strong id="lastScan">Just now</strong><span class="metric-foot">Refresh to rescan demo data</span></article>
+      </div>
+    </section>
+
+    <section id="signals" class="section">
+      <div class="section-heading"><div><p class="eyebrow">STRATEGY OUTPUT</p><h2>Latest signals</h2><p class="section-copy">Signal direction is calculated from a simulated price series using fast and slow exponential moving averages.</p></div><button id="refreshBtn" class="button button-outline">↻ Run scan</button></div>
+      <div class="filters">
+        <label>Market group<select id="groupFilter"><option value="all">All pairs</option><option value="major">Major pairs</option><option value="minor">Minor pairs</option><option value="exotic">Exotic pairs</option></select></label>
+        <label>Signal type<select id="typeFilter"><option value="all">All directions</option><option value="BUY">BUY only</option><option value="SELL">SELL only</option><option value="WAIT">WAIT only</option></select></label>
+        <label>Access<select id="accessFilter"><option value="all">Free + VIP</option><option value="free">Free only</option><option value="vip">VIP only</option></select></label>
+      </div>
+      <div id="signalGrid" class="signal-grid" aria-live="polite"></div>
+      <p id="emptyState" class="empty-state hidden">No signals match these filters. Try another selection.</p>
+    </section>
+
+    <section id="how-it-works" class="section how-section">
+      <div class="section-heading"><div><p class="eyebrow">THE METHOD</p><h2>How the demo strategy works</h2></div></div>
+      <div class="how-grid">
+        <article><span>01</span><h3>Generate sample candles</h3><p>The prototype creates an illustrative price series for each pair. It is not connected to a broker or market feed.</p></article>
+        <article><span>02</span><h3>Compare moving averages</h3><p>A fast EMA and slow EMA are compared. A recent crossover creates a BUY or SELL direction; otherwise the signal is WAIT.</p></article>
+        <article><span>03</span><h3>Calculate risk levels</h3><p>Demo entry, stop-loss, and take-profit levels are calculated using a fixed illustrative distance. Test thoroughly before real use.</p></article>
+      </div>
+    </section>
+
+    <section id="vip" class="vip-banner">
+      <div><p class="eyebrow">FOREVER VIP</p><h2>Make room for premium features.</h2><p>Preview a VIP experience with premium signal cards. Real subscriptions, user accounts, and payment verification must be added on a secure backend before launch.</p></div>
+      <div class="vip-side"><div class="crown">♛</div><b>VIP MEMBERSHIP</b><span>Premium signal access</span><button id="vipBannerBtn" class="button button-gold">Preview VIP access</button></div>
+    </section>
+    <section class="disclaimer"><b>Risk notice</b><p>Forex trading involves substantial risk and may not be suitable for every trader. This prototype is for software demonstration and education only. It does not provide live market data, personalized investment advice, or guaranteed results. Never trade real money based only on these demo signals.</p></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">F</span><span>FOREVER <b>FOREX</b><small>SIGNALS</small></span></a><span>Prototype v1.0 · Demo data only</span></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
